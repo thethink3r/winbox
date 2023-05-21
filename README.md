@@ -35,3 +35,6 @@ Note:
 
 First Start darkmode not enable -> close and restart Application
 
+Menu entry / icon is visible after reboot
+
+
