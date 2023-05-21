@@ -17,4 +17,7 @@ Install
 flatpak --user install winbox.flatpak
 ```
 
-
+Install Requirements:
+```bash
+flatpak --user install org.freedesktop.Platform/x86_64/22.08
+```
