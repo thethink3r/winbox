@@ -22,8 +22,6 @@ flatpak install org.freedesktop.Sdk
 ## Install flatpak
 ```bash
 flatpak --user install winbox.flatpak
-
-
 ```
 
 ## Install Runtime Requirements:
@@ -35,5 +33,5 @@ flatpak --user install org.winehq.Wine/x86_64/stable-22.08
 
 Note:
 
-First Start darkmode not enabel -> close and restart Application
+First Start darkmode not enable -> close and restart Application
 

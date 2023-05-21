@@ -19,6 +19,9 @@ finish-args:
   - --allow=devel
   - --system-talk-name=org.freedesktop.UDisks2
   - --system-talk-name=org.freedesktop.NetworkManager
+  - --filesystem=xdg-desktop
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
 command: winbox
 
 add-extensions:
