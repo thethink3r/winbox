@@ -19,21 +19,21 @@ flatpak install org.freedesktop.Sdk
 # Install via winbox.flatpak
 
 
-## Install Runtime Requirements:
+## 1. Install Runtime Requirements:
 ```bash
 flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak --user install org.freedesktop.Platform/x86_64/22.08
 flatpak --user install org.winehq.Wine/x86_64/stable-22.08
 ```
-## Install flatpak
+## 2. Install flatpak
 ```bash
 flatpak --user install winbox.flatpak
 ```
 
 
-**Note:**
+## :exclamation:Note 
 
-First Start darkmode not enable -> close and ==restart Application==
+First Start darkmode not enable -> close and restart Application
 
 Menu entry / icon is visible after reboot
 
