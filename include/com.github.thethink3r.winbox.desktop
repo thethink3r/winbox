@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Winbox
+Exec=winbox
+Comment=Winbox for MikroTik RouterOS
+Type=Application
+Icon=com.github.thethink3r.winbox
+StartupWMClass=Winbox
+Categories=Network;
+Terminal=false

@@ -1,0 +1,48 @@
+# Ref: https://gitlab.com/parcimonic/legendary-flatpak/-/blob/development/com.gitlab.parcimonic.legendary.yml
+# Ref: https://raw.githubusercontent.com/flathub/org.winehq.Wine/fca5b6d6c5e95db3d2515c34c80c9333e2e3537d/org.winehq.Wine.yml
+# Ref: https://ramsdenj.com/2018/03/26/packaging-pathofexile-with-flatpak.html
+
+app-id: com.github.thethink3r.winbox
+base: org.winehq.Wine
+base-version: stable-22.08
+runtime: org.freedesktop.Platform
+runtime-version: '22.08'
+sdk: org.freedesktop.Sdk
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --device=all
+  - --socket=pulseaudio
+  - --share=network
+  - --allow=multiarch
+  - --allow=devel
+  - --system-talk-name=org.freedesktop.UDisks2
+  - --system-talk-name=org.freedesktop.NetworkManager
+command: winbox
+
+add-extensions:
+  org.freedesktop.Platform.Compat.i386:
+    directory: lib/i386-linux-gnu
+    version: '22.08'
+
+  org.winehq.Wine.mono:
+    directory: share/wine/mono
+    bundle: true
+
+modules:
+  - name: winbox
+    buildsystem: simple
+    sources:
+      - type: dir
+        path: "./include"
+
+    build-commands:
+      - install -D winbox.sh /app/bin/winbox
+      - install -D wine-breeze-dark.reg /app/wine-breeze-dark.reg
+      - install -D icon.png /app/exports/share/app-info/icons/flatpak/128x128/com.github.thethink3r.winbox.png
+      - install -D icon.svg /app/share/icons/hicolor/scalable/mimetypes/com.github.thethink3r.winbox.svg
+      - install -D com.github.thethink3r.winbox.desktop /app/share/applications/com.github.thethink3r.winbox.desktop
+
+cleanup:
+  - './winbox'
